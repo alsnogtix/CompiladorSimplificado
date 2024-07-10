@@ -1,17 +1,37 @@
 %{
-#include "parser.tab.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+extern void yyerror(const char *s);
 %}
 
 %%
-[0-9]+          { yylval = atoi(yytext); return NUMBER; }
-"+"             { return ADD; }
-"-"             { return SUB; }
-"*"             { return MUL; }
-"/"             { return DIV; }
-"("             { return LPAREN; }
-")"             { return RPAREN; }
-[ \t\n]+        { /* Ignorar espaços, tabulações e novas linhas */ }
-.               { return yytext[0]; }
+[0-9]+              { printf("NUMBER(%s)\n", yytext); }
+[a-zA-Z_][a-zA-Z0-9_]* {
+                        if (strcmp(yytext, "if") == 0) { printf("IF\n"); }
+                        else if (strcmp(yytext, "else") == 0) { printf("ELSE\n"); }
+                        else { printf("IDENTIFIER(%s)\n", yytext); }
+                    }
+"=="                { printf("EQ\n"); }
+"!="                { printf("NEQ\n"); }
+">="                { printf("GE\n"); }
+"<="                { printf("LE\n"); }
+">"                 { printf("GT\n"); }
+"<"                 { printf("LT\n"); }
+"&&"                { printf("AND\n"); }
+"||"                { printf("OR\n"); }
+"+"                 { printf("ADD\n"); }
+"-"                 { printf("SUB\n"); }
+"*"                 { printf("MUL\n"); }
+"/"                 { printf("DIV\n"); }
+"="                 { printf("ASSIGN\n"); }
+"("                 { printf("LPAREN\n"); }
+")"                 { printf("RPAREN\n"); }
+"{"                 { printf("LBRACE\n"); }
+"}"                 { printf("RBRACE\n"); }
+[ \t\n]+            { /* Ignorar espaços, tabulações e novas linhas */ }
+.                   { printf("UNKNOWN(%s)\n", yytext); }
 %%
 
 int yywrap() {

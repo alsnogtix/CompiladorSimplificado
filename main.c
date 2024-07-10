@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int yyparse(void);
+extern int yylex(void);
 
 int main(void) {
-    printf("Digite uma expressão: \n");
-    yyparse();
+    printf("Digite o código fonte:\n");
+    yylex();
     return 0;
 }
 
