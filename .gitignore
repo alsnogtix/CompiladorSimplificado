@@ -1,2 +1,6 @@
 
 parser.y
+lex.yy.c
+test_script.sh
+lexerLeonardo.l
+lexerMeu.l
