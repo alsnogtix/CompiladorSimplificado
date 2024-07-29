@@ -1,2 +1,3 @@
 Compilador simplificado construído para avaliação da disciplina introdução a
 compiladores do curso de informática UEM.
+executar usando ./test_script.sh
