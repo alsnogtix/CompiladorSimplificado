@@ -44,7 +44,7 @@ extern void yyerror(const char *s);
 "%"        {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("REMAINDER");chars+=strlen(yytext);token++;}
 "++"       {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("INC");chars+=strlen(yytext);token++;}
 "--"       {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("DEC");chars+=strlen(yytext);token++;}
-%"&"        {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("BITWISE_AND");chars+=strlen(yytext);token++;}
+"&"        {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("BITWISE_AND");chars+=strlen(yytext);token++;}
 %"|"        {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("BITWISE_OR");chars+=strlen(yytext);token++;}
 %"~"        {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("BITWISE_NOT");chars+=strlen(yytext);token++;}
 %"^"        {if(pula_linha != 0){printf("\n");}pula_linha=1;printf("BITWISE_XOR");chars+=strlen(yytext);token++;}
