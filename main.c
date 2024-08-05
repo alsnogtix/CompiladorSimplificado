@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-extern int yylex(void);
+int yyparse(void);
 
 int main(void) {
     printf("Digite o código fonte:\n");
-    yylex();
+    yyparse();
     return 0;
 }
 

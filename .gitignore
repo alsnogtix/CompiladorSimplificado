@@ -3,3 +3,7 @@ lex.yy.c
 lexerLeonardo.l
 lexerMeu.l
 lexer
+test_cases.txt
+compiler
+parser.tab.c
+parser.tab.h
