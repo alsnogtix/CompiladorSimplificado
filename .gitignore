@@ -1,5 +1,4 @@
 
-parser.y
 lex.yy.c
 lexerLeonardo.l
 lexerMeu.l
